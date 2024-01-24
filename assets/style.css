@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 
-/* TODO: Add media querys for all screen sizes */
-
+/* --- Reset browser styles ---*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,10 +19,9 @@
   --white: #fff;
   --fw-900: 900;
   --fw-700: 700;
-  --fw-500: 500;
   --border-radius-20: 1.25rem;
   --border-radius-10: 0.625rem;
-  --trasition-500: 500ms;
+  --transition-500: 500ms;
 }
 
 body {
@@ -51,13 +49,10 @@ button {
   border: none;
   padding: 0.9375rem;
 }
-
+/* --- Start card styles --- */
 .card {
   background-color: var(--white);
   border-radius: var(--border-radius-20);
-  max-height: 43.125rem;
-  max-width: 650px;
-  min-width: 300px;
   overflow: hidden;
   box-shadow: 1px 1px 20px var(--box-shadow-light);
 }
@@ -120,7 +115,7 @@ button {
 .card-change-link:hover {
   text-decoration: none;
   color: var(--bright-blue-faded);
-  transition: var(--trasition-500);
+  transition: var(--transition-500);
 }
 
 .card-btn-container {
@@ -141,7 +136,7 @@ button {
 }
 .card-proceed-btn:hover {
   background-color: var(--bright-blue-faded);
-  transition: var(--trasition-500);
+  transition: var(--transition-500);
 }
 
 .card-cancel-link {
@@ -152,8 +147,36 @@ button {
 }
 .card-cancel-link:hover {
   color: var(--dark-blue);
-  transition: var(--trasition-500);
+  transition: var(--transition-500);
 }
+/* --- End Card Styles --- */
 
-  
-  
+/* --- Media queries for small screens ---  */
+@media (max-width: 450px) {
+  .card {
+    margin: 0 1.1rem;
+  }
+  .card-plan {
+    margin: 0;
+  }
+  .card-plan-container {
+    margin: 1rem;
+  }
+  .card-btn-container {
+    margin: 1rem;
+  }
+  .card-content-header {
+    font-size: 1.5rem;
+  }
+  .card-content-paragraph {
+    max-width: 80%;
+  }
+}
+@media (max-width: 280px) {
+  .card {
+    margin: 0.5rem;
+  }
+  .card-plan-container {
+    padding: 1rem 0.5rem;
+  }
+}
